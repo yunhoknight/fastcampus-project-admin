@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @DisplayName("View 컨트롤러 - 어드민 유저")
 @Import(SecurityConfig.class)
-@WebMvcTest(ArticleManagementController.class)
+@WebMvcTest(AdminUserAccountController.class)
 class AdminUserAccountControllerTest {
 
     private final MockMvc mvc;
@@ -32,7 +32,7 @@ class AdminUserAccountControllerTest {
         mvc.perform(get("/admin/members"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
-                .andExpect(view().name("/admin/members"));
+                .andExpect(view().name("admin/members"));
 
 }
 
